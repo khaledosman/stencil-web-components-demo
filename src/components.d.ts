@@ -24,6 +24,7 @@ export namespace Components {
     * The last name
     */
     'last': string;
+    'setPotato': (potato: string) => void;
     /**
     * sets view mode
     */
@@ -32,6 +33,7 @@ export namespace Components {
     * sets visited pois
     */
     'setVisitedPOIs': (pois: { key: boolean; }) => void;
+    'todos': Array<{ name: string }>;
   }
   interface MyComponentAttributes extends StencilHTMLAttributes {
     /**
@@ -42,6 +44,8 @@ export namespace Components {
     * The last name
     */
     'last'?: string;
+    'onButtonClicked'?: (event: CustomEvent) => void;
+    'todos'?: Array<{ name: string }>;
   }
 }
 
