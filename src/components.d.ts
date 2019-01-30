@@ -20,6 +20,10 @@ export namespace Components {
 
   interface MyComponent {
     /**
+    * Input name prop
+    */
+    'name': string;
+    /**
     * Sets list of visited PointsOfInterest
     */
     'setPointsOfInterest': (pointsOfInterest: PointOfInterest[]) => void;
@@ -28,7 +32,12 @@ export namespace Components {
     */
     'setViewMode': (viewMode: ViewMode) => void;
   }
-  interface MyComponentAttributes extends StencilHTMLAttributes {}
+  interface MyComponentAttributes extends StencilHTMLAttributes {
+    /**
+    * Input name prop
+    */
+    'name'?: string;
+  }
 }
 
 declare global {

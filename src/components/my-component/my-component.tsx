@@ -1,4 +1,4 @@
-import { Component, Method, State } from '@stencil/core'
+import { Component, Method, Prop, State, Watch } from '@stencil/core'
 import { PointOfInterest } from '../../utils/PointOfInterest'
 import { ViewMode } from '../../utils/view-mode.enum'
 /**
@@ -13,6 +13,14 @@ import { ViewMode } from '../../utils/view-mode.enum'
   shadow: true
 })
 export class MyComponent {
+
+  /**
+   * Input name prop
+   *
+   * @type {string}
+   * @memberof MyComponent
+   */
+  @Prop() public name: string = 'Stencil'
 
   /**
    * The view mode of the map
@@ -40,6 +48,26 @@ export class MyComponent {
   public setPointsOfInterest (pointsOfInterest: PointOfInterest[]) {
     this.pointsOfInterest = pointsOfInterest
   }
+  public componentWillLoad () {
+    console.log('The component is about to be rendered')
+  }
+  public componentDidLoad () {
+    console.log('The component has been rendered')
+  }
+  public componentWillUpdate () {
+    console.log('The component will update')
+  }
+  public componentDidUpdate () {
+    console.log('The component did update')
+  }
+  public componentDidUnload () {
+    console.log('The view has been removed from the DOM')
+  }
+
+  @Watch('name')
+  public watchHandler (newValue) {
+    console.log('The value of name is: ', newValue)
+  }
 
   /**
    * Sets the view mode of the map
@@ -55,11 +83,10 @@ export class MyComponent {
   public render () {
     return (
       <div>
-       <h1> Hi </h1>
+       <h1> Hi {this.name}</h1>
        <div>View Mode: {this.viewMode}</div>
        <div>Visited PointsOfInterest:
        {this.pointsOfInterest.map((poi) => {
-         console.log(poi)
          return <div key={poi.id}>
         {poi.id}
        </div>

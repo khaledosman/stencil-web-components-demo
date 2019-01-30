@@ -5,6 +5,13 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property | Attribute | Description     | Type     | Default     |
+| -------- | --------- | --------------- | -------- | ----------- |
+| `name`   | `name`    | Input name prop | `string` | `'Stencil'` |
+
+
 ## Methods
 
 ### `setPointsOfInterest(pointsOfInterest: PointOfInterest[]) => void`
