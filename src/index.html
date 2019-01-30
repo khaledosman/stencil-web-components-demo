@@ -9,25 +9,10 @@
     window.onload = (ev) => {
       const MyComponent = document.querySelector('my-component')
 
-      // Listen to button click event, can also be done via JSX as onButtonClicked
-      MyComponent.addEventListener('buttonClicked', event => {
-        console.log(event)
-      })
-
-      // Set a prop, can also be done
-      MyComponent.todos = [{
-        name: 'Build app'
-      }]
-
       setTimeout(() => {
         // Set state via public method
-        MyComponent.setPotato('lol')
-
-        // Update Props
-        MyComponent.todos = [{
-        name: 'Build another app'
-        }, ...MyComponent.todos]
-
+        MyComponent.setViewMode('Map')
+        MyComponent.setPointsOfInterest([{id: '1', isVisited: true}])
       }, 3000)
     }
   </script>
@@ -36,7 +21,7 @@
 <body style="width: 100%; height: 100%;">
   <div style="width: 50%; height: 50%; margin: 0 auto; margin-top: 50px; background-color: #dddddd;">
 
-    <my-component first="John" potato="potato"></my-component>
+    <my-component name="Khaled"></my-component>
   </div>
 
 </body>

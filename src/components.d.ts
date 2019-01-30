@@ -9,6 +9,9 @@ import '@stencil/core';
 
 
 import {
+  PointOfInterest,
+} from './utils/PointOfInterest';
+import {
   ViewMode,
 } from './utils/view-mode.enum';
 
@@ -17,36 +20,15 @@ export namespace Components {
 
   interface MyComponent {
     /**
-    * The first name
+    * Sets list of visited PointsOfInterest
     */
-    'first': string;
+    'setPointsOfInterest': (pointsOfInterest: PointOfInterest[]) => void;
     /**
-    * The last name
-    */
-    'last': string;
-    'setPotato': (potato: string) => void;
-    /**
-    * sets view mode
+    * Sets the view mode of the map
     */
     'setViewMode': (viewMode: ViewMode) => void;
-    /**
-    * sets visited pois
-    */
-    'setVisitedPOIs': (pois: { key: boolean; }) => void;
-    'todos': Array<{ name: string }>;
   }
-  interface MyComponentAttributes extends StencilHTMLAttributes {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    'onButtonClicked'?: (event: CustomEvent) => void;
-    'todos'?: Array<{ name: string }>;
-  }
+  interface MyComponentAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {

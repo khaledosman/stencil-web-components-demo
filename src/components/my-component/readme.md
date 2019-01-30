@@ -5,25 +5,17 @@
 <!-- Auto Generated Below -->
 
 
-## Properties
-
-| Property | Attribute | Description    | Type     | Default     |
-| -------- | --------- | -------------- | -------- | ----------- |
-| `first`  | `first`   | The first name | `string` | `undefined` |
-| `last`   | `last`    | The last name  | `string` | `undefined` |
-
-
 ## Methods
 
-### `setViewMode(viewMode: ViewMode) => void`
+### `setPointsOfInterest(pointsOfInterest: PointOfInterest[]) => void`
 
-sets view mode
+Sets list of visited PointsOfInterest
 
 #### Parameters
 
-| Name       | Type                            | Description |
-| ---------- | ------------------------------- | ----------- |
-| `viewMode` | `ViewMode.LIST \| ViewMode.MAP` |             |
+| Name               | Type                | Description |
+| ------------------ | ------------------- | ----------- |
+| `pointsOfInterest` | `PointOfInterest[]` |             |
 
 #### Returns
 
@@ -31,15 +23,15 @@ Type: `void`
 
 
 
-### `setVisitedPOIs(pois: { key: boolean; }) => void`
+### `setViewMode(viewMode: ViewMode) => void`
 
-sets visited pois
+Sets the view mode of the map
 
 #### Parameters
 
-| Name   | Type                | Description |
-| ------ | ------------------- | ----------- |
-| `pois` | `{ key: boolean; }` |             |
+| Name       | Type              | Description |
+| ---------- | ----------------- | ----------- |
+| `viewMode` | `"List" \| "Map"` |             |
 
 #### Returns
 

@@ -1,4 +1,1 @@
-export enum ViewMode {
-  MAP,
-  LIST
-}
+export type ViewMode = 'List' | 'Map'
