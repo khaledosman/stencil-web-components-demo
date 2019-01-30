@@ -1,8 +1,6 @@
 import { Component, Method, Prop, State } from '@stencil/core'
-enum ViewMode {
-  MAP,
-  LIST
-}
+import { ViewMode } from '../../utils/view-mode.enum'
+
 @Component({
   tag: 'my-component',
   styleUrl: 'my-component.css',
@@ -14,11 +12,32 @@ export class MyComponent {
    */
   @Prop() public first: string
 
+  /**
+   * The view mode of the map
+   */
   @State() public viewMode: ViewMode
+
   /**
    * The last name
    */
   @Prop() public last: string
+
+  /**
+   * sets visited pois
+   */
+  @Method()
+  public setVisitedPOIs (pois: {key: boolean}) {
+    console.log(pois)
+  }
+
+  /**
+   * sets view mode
+   */
+  @Method()
+  public setViewMode (viewMode: ViewMode) {
+    this.viewMode = viewMode
+  }
+
   public componentWillLoad () {
     console.log('The component is about to be rendered')
   }
@@ -28,15 +47,8 @@ export class MyComponent {
   public componentDidUpdate () {
     console.log('The component did update')
   }
-
-  @Method()
-  public setVisitedPOIs (pois) {
-    console.log(pois)
-  }
-
-  @Method()
-  public setViewMode (viewMode: ViewMode) {
-    this.viewMode = viewMode
+  public componentWillUpdate () {
+    console.log('The component will update')
   }
 
   public render () {

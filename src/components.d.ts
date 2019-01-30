@@ -8,6 +8,9 @@
 import '@stencil/core';
 
 
+import {
+  ViewMode,
+} from './utils/view-mode.enum';
 
 
 export namespace Components {
@@ -21,8 +24,14 @@ export namespace Components {
     * The last name
     */
     'last': string;
+    /**
+    * sets view mode
+    */
     'setViewMode': (viewMode: ViewMode) => void;
-    'setVisitedPOIs': (pois: any) => void;
+    /**
+    * sets visited pois
+    */
+    'setVisitedPOIs': (pois: { key: boolean; }) => void;
   }
   interface MyComponentAttributes extends StencilHTMLAttributes {
     /**
