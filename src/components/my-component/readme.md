@@ -14,35 +14,23 @@
 
 ## Methods
 
-### `setPointsOfInterest(pointsOfInterest: PointOfInterest[]) => void`
+### `setPointsOfInterest(pointsOfInterest: PointOfInterest[]) => Promise<void>`
 
 Sets list of visited PointsOfInterest
 
-#### Parameters
-
-| Name               | Type                | Description |
-| ------------------ | ------------------- | ----------- |
-| `pointsOfInterest` | `PointOfInterest[]` |             |
-
 #### Returns
 
-Type: `void`
+Type: `Promise<void>`
 
 
 
-### `setViewMode(viewMode: ViewMode) => void`
+### `setViewMode(viewMode: ViewMode) => Promise<void>`
 
 Sets the view mode of the map
 
-#### Parameters
-
-| Name       | Type              | Description |
-| ---------- | ----------------- | ----------- |
-| `viewMode` | `"List" \| "Map"` |             |
-
 #### Returns
 
-Type: `void`
+Type: `Promise<void>`
 
 
 

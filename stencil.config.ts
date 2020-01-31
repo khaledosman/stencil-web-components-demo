@@ -1,13 +1,14 @@
-import { Config } from '@stencil/core';
+import { Config } from '@stencil/core'
 
 export const config: Config = {
   namespace: 'mycomponent',
-  outputTargets:[
+  outputTargets: [
     { type: 'dist' },
     { type: 'docs-readme' },
     {
       type: 'www',
-      serviceWorker: null // disable service workers
+      baseUrl: 'http://localhost:3333'
+      // serviceWorker: null // disable service workers
     }
   ]
-};
+}
