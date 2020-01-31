@@ -1,4 +1,4 @@
-import { Component, Method, Prop, State, Watch } from '@stencil/core'
+import { Component, Method, Prop, State, Watch, h } from '@stencil/core'
 import { PointOfInterest } from '../../utils/PointOfInterest'
 import { ViewMode } from '../../utils/view-mode.enum'
 /**
@@ -45,27 +45,27 @@ export class MyComponent {
    * @memberof MyComponent
    */
   @Method()
-  public setPointsOfInterest (pointsOfInterest: PointOfInterest[]) {
+  public async setPointsOfInterest(pointsOfInterest: PointOfInterest[]) {
     this.pointsOfInterest = pointsOfInterest
   }
-  public componentWillLoad () {
+  public componentWillLoad() {
     console.log('The component is about to be rendered')
   }
-  public componentDidLoad () {
+  public componentDidLoad() {
     console.log('The component has been rendered')
   }
-  public componentWillUpdate () {
+  public componentWillUpdate() {
     console.log('The component will update')
   }
-  public componentDidUpdate () {
+  public componentDidUpdate() {
     console.log('The component did update')
   }
-  public componentDidUnload () {
+  public componentDidUnload() {
     console.log('The view has been removed from the DOM')
   }
 
   @Watch('name')
-  public watchHandler (newValue) {
+  public watchHandler(newValue) {
     console.log('The value of name is: ', newValue)
   }
 
@@ -76,22 +76,22 @@ export class MyComponent {
    * @memberof MyComponent
    */
   @Method()
-  public setViewMode (viewMode: ViewMode) {
+  public async setViewMode(viewMode: ViewMode) {
     this.viewMode = viewMode
   }
 
-  public render () {
+  public render() {
     return (
       <div>
-       <h1> Hi {this.name}</h1>
-       <div>View Mode: {this.viewMode}</div>
-       <div>Visited PointsOfInterest:
+        <h1> Hi {this.name}</h1>
+        <div>View Mode: {this.viewMode}</div>
+        <div>Visited PointsOfInterest:
        {this.pointsOfInterest.map((poi) => {
-         return <div key={poi.id}>
-        {poi.id}
-       </div>
-       })}
-       </div>
+          return <div key={poi.id}>
+            {poi.id}
+          </div>
+        })}
+        </div>
       </div>
     )
   }

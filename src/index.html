@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en" style="width: 100%; height: 100%">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
-  <script src="/build/mycomponent.js"></script>
-  <script>
-    window.onload = (ev) => {
-      const MyComponent = document.querySelector('my-component')
 
-      setTimeout(() => {
-        // Set state via public method
-        MyComponent.setViewMode('Map')
-        MyComponent.setPointsOfInterest([{id: '1', isVisited: true}])
-        MyComponent.name = 'Khaled'
-      }, 3000)
-    }
-  </script>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <title>Stencil Component Starter</title>
+    <script type="module" src="/build/mycomponent.esm.js"></script>
+    <script nomodule src="/build/mycomponent.js"></script>
+    <script>
+      window.onload = (ev) => {
+        const MyComponent = document.querySelector('my-component')
 
-</head>
-<body style="width: 100%; height: 100%;">
-  <div style="width: 50%; height: 50%; margin: 0 auto; margin-top: 50px; background-color: #dddddd;">
+        setTimeout(() => {
+          // Set state via public method
+          MyComponent.setViewMode('Map')
+          MyComponent.setPointsOfInterest([{ id: '1', isVisited: true }])
+          MyComponent.name = 'Khaled'
+        }, 3000)
+      }
+    </script>
 
-    <my-component name="Stencil"></my-component>
-  </div>
+  </head>
 
-</body>
+  <body style="width: 100%; height: 100%;">
+    <div style="width: 50%; height: 50%; margin: 0 auto; margin-top: 50px; background-color: #dddddd;">
+
+      <my-component name="Stencil"></my-component>
+    </div>
+
+  </body>
+
 </html>
