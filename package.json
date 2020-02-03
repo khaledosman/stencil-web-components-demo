@@ -21,7 +21,7 @@
     "@stencil/core": "~1.8.6",
     "tslint": "^6.0.0",
     "tslint-config-standard": "^9.0.0",
-    "workbox-build": "4.3.1"
+    "workbox-build": "5.0.0"
   },
   "license": "MIT"
 }
